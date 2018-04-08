@@ -1,0 +1,246 @@
+//'use strict';
+var datos_Cliente, Device_identifier, datos_Vehiculo, urlService;
+var urlInterno = 'http://IPS10:8089';  // 'http://192.168.1.3:8089'; 
+var urlExterno = 'http://190.108.66.10:8089';
+var notificationWidget;
+(function () {
+    var app = {
+        data: {},
+        localization: {
+            defaultCulture: 'en',
+            cultures: [{
+                name: "English",
+                code: "en"
+            }]
+        },
+        navigation: {
+            viewModel: kendo.observable()
+        }
+    };
+
+    var bootstrap = function () {
+        $(function () {
+            app.mobileApp = new kendo.mobile.Application(document.body, {
+                skin: 'nova',
+                initial: 'components/home/view.html'
+            });
+
+            kendo.bind($('.navigation-link-text'), app.navigation.viewModel);
+        });
+    };
+
+    $(document).ready(function () {
+        notificationWidget = $("#notification").kendoNotification().data("kendoNotification");
+        app.notification = $("#notify");
+
+    });
+
+    app.showNotification = function (message, time) {
+        var autoHideAfter = time ? time : 3000;
+        app.notification.find('.notify-pop-up__content').html(message);
+        app.notification.fadeIn("slow").delay(autoHideAfter).fadeOut("slow");
+    };
+
+    if (window.cordova) {
+        document.addEventListener('deviceready', function () {
+            if (navigator && navigator.splashscreen) {
+                navigator.splashscreen.hide();
+            }
+
+            var element = document.getElementById('appDrawer');
+            if (typeof (element) != 'undefined' && element !== null) {
+                if (window.navigator.msPointerEnabled) {
+                    $('#navigation-container').on('MSPointerDown', 'a', function (event) {
+                        app.keepActiveState($(this));
+                    });
+                } else {
+                    $('#navigation-container').on('touchstart', 'a', function (event) {
+                        app.keepActiveState($(this).closest('li'));
+                    });
+                }
+            }
+
+            bootstrap();
+        }, false);
+    } else {
+        bootstrap();
+    }
+
+    app.keepActiveState = function _keepActiveState(item) {
+        var currentItem = item;
+        $('#navigation-container li.active').removeClass('active');
+        currentItem.addClass('active');
+    };
+
+    window.app = app;
+
+    app.isOnline = function () {
+        if (!navigator || !navigator.connection) {
+            return true;
+        } else {
+            return navigator.connection.type !== 'none';
+        }
+    };
+
+    app.openLink = function (url) {
+        if (url.substring(0, 4) === 'geo:' && device.platform === 'iOS') {
+            url = 'http://maps.apple.com/?ll=' + url.substring(4, url.length);
+        }
+
+        window.open(url, '_system');
+        if (window.event) {
+            window.event.preventDefault && window.event.preventDefault();
+            window.event.returnValue = false;
+        }
+    };
+
+    /// start appjs functions
+    /// end appjs functions
+    app.showFileUploadName = function (itemViewName) {
+        $('.' + itemViewName).off('change', 'input[type=\'file\']').on('change', 'input[type=\'file\']', function (event) {
+            var target = $(event.target),
+                inputValue = target.val(),
+                fileName = inputValue.substring(inputValue.lastIndexOf('\\') + 1, inputValue.length);
+
+            $('#' + target.attr('id') + 'Name').text(fileName);
+        });
+
+    };
+
+    app.clearFormDomData = function (formType) {
+        $.each($('.' + formType).find('input:not([data-bind]), textarea:not([data-bind])'), function (key, value) {
+            var domEl = $(value),
+                inputType = domEl.attr('type');
+
+            if (domEl.val().length) {
+
+                if (inputType === 'file') {
+                    $('#' + domEl.attr('id') + 'Name').text('');
+                }
+
+                domEl.val('');
+            }
+        });
+    };
+
+    /// start kendo binders
+    kendo.data.binders.widget.buttonText = kendo.data.Binder.extend({
+        init: function (widget, bindings, options) {
+            kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+        },
+        refresh: function () {
+            var that = this,
+                value = that.bindings["buttonText"].get();
+
+            $(that.element).text(value);
+        }
+    });
+    /// end kendo binders
+} ());
+
+/// start app modules
+(function localization(app) {
+    var localization = app.localization = kendo.observable({
+        cultures: app.localization.cultures,
+        defaultCulture: app.localization.defaultCulture,
+        currentCulture: '',
+        strings: {},
+        viewsNames: [],
+        registerView: function (viewName) {
+            app[viewName].set('strings', getStrings() || {});
+
+            this.viewsNames.push(viewName);
+        }
+    }),
+        i, culture, cultures = localization.cultures,
+        getStrings = function () {
+            var code = localization.get('currentCulture'),
+                strings = localization.get('strings')[code];
+
+            return strings;
+        },
+        updateStrings = function () {
+            var i, viewName, viewsNames,
+                strings = getStrings();
+
+            if (strings) {
+                viewsNames = localization.get('viewsNames');
+
+                for (i = 0; i < viewsNames.length; i++) {
+                    viewName = viewsNames[i];
+
+                    app[viewName].set('strings', strings);
+                }
+
+                app.navigation.viewModel.set('strings', strings);
+            }
+        },
+        loadCulture = function (code) {
+            $.getJSON('cultures/' + code + '/app.json',
+                function onLoadCultureStrings(data) {
+                    localization.strings.set(code, data);
+                });
+        };
+
+    localization.bind('change', function onLanguageChange(e) {
+        if (e.field === 'currentCulture') {
+            var code = e.sender.get('currentCulture');
+
+            updateStrings();
+        } else if (e.field.indexOf('strings') === 0) {
+            updateStrings();
+        } else if (e.field === 'cultures' && e.action === 'add') {
+            loadCulture(e.items[0].code);
+        }
+    });
+
+    for (i = 0; i < cultures.length; i++) {
+        loadCulture(cultures[i].code);
+    }
+
+    localization.set('currentCulture', localization.defaultCulture);
+})(window.app);
+
+function inspeccionar(obj) {
+    try {
+        var msg = '';
+        for (var property in obj) {
+            if (typeof obj[property] == 'function') {
+                var inicio = obj[property].toString().indexOf('function');
+                var fin = obj[property].toString().indexOf(')') + 1;
+                var propertyValue = obj[property].toString().substring(inicio, fin);
+                msg += (typeof obj[property]) + ' ' + property + ' : ' + propertyValue + ' ;\n';
+            } else if (typeof obj[property] == 'unknown') {
+                msg += 'unknown ' + property + ' : unknown ;\n';
+            } else {
+                msg += (typeof obj[property]) + ' ' + property + ' : ' + obj[property] + ' ;\n';
+            }
+        }
+        return msg;
+    } catch (e) {
+        alert(e);
+    }
+}
+function beforeDrawerShow(e) {
+    if ((e.view.currentView.id == "components/home/view.html") || (e.view.currentView.id == "components/logIn/view.html") || (e.view.currentView.id == "components/Registro/view.html")) {
+        e.preventDefault();
+    }
+}
+
+function mens(Mensaje, Tipo) {
+    var valorIzq = (Mensaje.length) * 4;
+    notificationWidget.setOptions({
+        position: {
+            top: Math.floor($(window).width() / 2),
+            left: Math.floor($(window).width() / 2 - valorIzq),
+            bottom: 0,
+            right: 0
+        },
+        font:{
+            size: 14,
+            bold: true
+        }
+    });
+    notificationWidget.showText(Mensaje, Tipo);
+}
+
