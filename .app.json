@@ -1,0 +1,139 @@
+{
+  "type": "kendo-ui-mobile",
+  "views": [
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "home",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:form",
+          "components": [
+            {
+              "type": "kendo-ui-mobile:editableListForm",
+              "components": [
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "imagenKia",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "i",
+                  "inputType": "image",
+                  "titlePosition": "top",
+                  "alignment": "center",
+                  "imageUpload": "kia.png"
+                }
+              ],
+              "name": "editableListForm",
+              "formType": "add"
+            }
+          ],
+          "name": "homeModel",
+          "enableDataBinding": false,
+          "submitButton": "Ingresar",
+          "cancelButton": "Registrarse"
+        }
+      ],
+      "title": "Home",
+      "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "logIn",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:authentication",
+          "name": "logInModel",
+          "dataProvider": "jsonProvider",
+          "enableRegistration": false,
+          "enableLogout": false,
+          "enableRememberme": true,
+          "remembermeLabel": "Auto LogIn",
+          "emailLabel": "Id",
+          "passwordLabel": "Password",
+          "signinLabel": "Ingresar",
+          "signinRedirect": "home"
+        }
+      ],
+      "title": "LogIn",
+      "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "miKia",
+      "components": [],
+      "title": "Mi Kia",
+      "addToNavigation": false
+    },
+    /*{
+      "type": "kendo-ui-mobile:view",
+      "name": "MenuKia",
+      "components": [],
+      "title": "Menú Kia",
+      "addToNavigation": false
+    },*/
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "miKia2",
+      "components": [],
+      "title": "Orden de instalación",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "miKia3",
+      "components": [],
+      "title": "Ubicación",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "miKia4",
+      "components": [],
+      "title": "Control vehículo",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "miKia5",
+      "components": [],
+      "title": "Mi Kia",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "miKia6",
+      "components": [],
+      "title": "Registrarse",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "mmtOTs",
+      "components": [],
+      "title": "Ordenes de Trabajo",
+      "addToNavigation": true,
+      "icon": "home"
+    }
+  ],
+  "dataProviders": [
+    {
+      "type": "kendo-ui-mobile:dataProvider",
+      "name": "jsonProvider",
+      "source": "json",
+      "url": "https://your-service-url/",
+      "title": "JSON Data Service"
+    }
+  ],
+  "name": "kendoUiMobileApp",
+  "navigation": "drawer",
+  "view": "home",
+  "skin": "nova",
+  "skinMainColor": "#32364c",
+  "skinTextColor": "#ffffff",
+  "skinAccentColor": "#ff4350"
+}

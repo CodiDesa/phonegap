@@ -1,0 +1,44 @@
+{
+  "ProjectName": "Inpsercom",
+  "ProjectGuid": "b0ff3202-5463-437b-b3df-a39a2c066b89",
+  "projectVersion": 1,
+  "AppIdentifier": "com.Inpsercom",
+  "DisplayName": "Inpsercom",
+  "Author": "Inpsercom",
+  "Description": "Inpsercom",
+  "BundleVersion": "1.3",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [
+    "2"
+  ],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "4.0.0",
+  "AndroidPermissions": [
+    "android.permission.INTERNET"
+  ],
+  "DeviceOrientations": [
+    "Portrait"
+  ],
+  "AndroidHardwareAcceleration": "False",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "WP8TileTitle": "",
+  "WP8Publisher": "",
+  "WP8Capabilities": [
+    "ID_CAP_NETWORKING",
+    "ID_CAP_WEBBROWSERCOMPONENT"
+  ],
+  "WP8Requirements": [],
+  "WP8PublisherID": "{597ac78c-c502-418c-8894-1df590e8ec26}",
+  "WP8ProductID": "{23949006-2364-46b6-ba13-ddb9c199b6b4}",
+  "WPSdk": "8.0",
+  "WP8PackageIdentityName": "1234Telerik.Inpsercom",
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ],
+  "CordovaPluginVariables": {}
+}
