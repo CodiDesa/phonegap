@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<div data-role="view" data-title="Menú Alertas" data-layout="main" data-model="app.menuAlertas" data-before-show="app.menuAlertas.onShow"
+    data-after-show="app.menuAlertas.afterShow" id="menuAlertasScreen" class="screen" data-stretch="true">
+    <header data-role="header">
+        <div data-role="navbar" class="header-text"><span data-role="view-title"></span><span id="NoOrdenAL" class="km-view-subtitle"></span>
+            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left"
+                data-icon="drawer-button"></a>
+            <a data-align="right" class="fa fa-reply" href="components/OrdenInstalacion/view.html" aria-hidden="true"
+                data-role="button"></a>
+        </div>
+    </header>
+    <div class="container fondoRojoLogin">
+        <div class="row" style="padding-top:54px; padding-bottom:54px;">
+            <div class="col-xs-6 text-center">
+                <a onclick="excesos()" class="icon-wrapper"> <span class="fa-stack fa-lg ">
+              <i class="mi-icon fa-stack-2x "></i>
+              <i class="fa fa-tachometer fa-stack-1x fa-inverse"></i>
+            </span> </a> <span class="icon-text clearfix ">Excesos de Velocidad</span> </div>
+            <div class="col-xs-6 text-center">
+                <a onclick="panico()" class="icon-wrapper"> <span class="fa-stack fa-lg ">
+              <i class="mi-icon fa-stack-2x "></i>
+              <i class="fa fa-file-audio-o fa-stack-1x fa-inverse"></i>
+            </span> </a> <span class="icon-text clearfix ">Pánico</span> </div>
+            <div class="col-xs-6 text-center">
+                <a onclick="geocercas()" class="icon-wrapper"> <span class="fa-stack fa-lg ">
+              <i class="mi-icon fa-stack-2x "></i>
+              <i class="fa fa-universal-access fa-stack-1x fa-inverse"></i>
+            </span> </a> <span class="icon-text clearfix ">Geo cercas</span> </div>
+            <div class="col-xs-6 text-center">
+                <a onclick="paradas()" class="icon-wrapper"> <span class="fa-stack fa-lg ">
+              <i class="mi-icon fa-stack-2x "></i>
+              <i class="fa fa-hand-paper-o fa-stack-1x fa-inverse"></i>
+            </span> </a> <span class="icon-text clearfix ">Paradas</span> </div>
+            <div class="col-xs-6 text-center">
+                <a onclick="apaencendido()" class="icon-wrapper"> <span class="fa-stack fa-lg ">
+              <i class="mi-icon fa-stack-2x "></i>
+              <i class="fa fa-adjust fa-stack-1x fa-inverse"></i>
+            </span> </a> <span class="icon-text clearfix ">Apagado Encendido</span> </div>
+        </div>
+    </div>
+</div>
+<style>
+    .fondoRojoLogin {
+        background-color: #bb162b; // #ff4350;
+    }
+</style>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<div data-role="view" data-title="Reporte Geocerca" data-layout="main" data-model="app.reporteGeocerca" data-show="app.reporteGeocerca.onShow" data-after-show="app.reporteGeocerca.afterShow"
+    id="reporteGeocercaScreen" class="screen" data-before-show="app.reporteGeocerca.inicializa" >
+    <header data-role="header">
+        <div data-role="navbar" class="header-text"><span data-role="view-title"></span><span id="NoOrdenGC1" class="km-view-subtitle"></span>
+            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
+            <a data-align="right" class="fa fa-reply" href="components/ReporteGeocercas/view.html" aria-hidden="true" data-role="button"></a>
+        </div>
+    </header>
+    <ul class="form-content" data-role="listview" data-style="inset">
+        <li id="objlist3" class="form-content-item">
+            <div id="mapgeo" class="mapView"></div>
+        </li>
+    </ul>
+    <!-- END_CUSTOM_CODE_mntVehiculos -->
+</div>

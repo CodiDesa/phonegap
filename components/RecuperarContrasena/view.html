@@ -1,0 +1,27 @@
+<div data-role="view" data-title="View" data-layout="main" data-model="app.miKia5" data-show="app.miKia5.onShow" data-after-show="app.miKia5.afterShow" id="miKia5Screen" class="screen">
+    <header data-role="header">
+        <div data-role="navbar" class="header-text">
+
+            <span data-bind="text: strings.miKia5.title"></span>
+
+            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
+
+        </div>
+    </header>
+
+    <div class="content" style=" padding: 30px 20px;">
+        <div class="container">
+            <form class="form-horizontal" id="registro">
+                <div class="form-group">
+                    <div class="col-xs-12"> <input type="email" class="form-control" id="recuperar_email" autofocus placeholder="Email"> </div>
+                </div>    
+            </form>
+            <div class="form-group" style="text-align:center"> <button class="primary" data-role="button" onclick="enviarMail()">Enviar mail</button> </div>
+        </div>
+    </div>
+
+    <!-- START_CUSTOM_CODE_miKia5 -->
+    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+    <!-- END_CUSTOM_CODE_miKia5 -->
+</div>

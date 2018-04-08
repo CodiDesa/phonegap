@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<div data-role="view" data-title="Pre Factura" data-layout="main" data-model="app.mntRegistroVin" data-show="app.mntRegistroVin.onShow"
+    data-after-show="app.mntRegistroVin.afterShow" id="mntRegistroVinScreen" class="screen" data-before-show="app.mntRegistroVin.inicializa"
+    data-use-native-scrolling="true" data-stretch="true">
+    <header data-role="header">
+        <div data-role="navbar" class="header-text"><span data-role="view-title"></span><span id="NumeroChasisPF" class="km-view-subtitle"></span>
+            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left"
+                data-icon="drawer-button"></a>
+            <a data-align="right" class="fa fa-reply" href="components/miKia/view.html" aria-hidden="true" data-role="button"></a>
+        </div>
+    </header>
+    <!--<div id="mymodal_cargar" class="modal">
+        <div class="modal-content"> <img src="resources/loader_FC.gif" alt="Loading. Please wait." style="width:50px;height:50px;" /> </div>
+    </div>-->
+    <form>
+        <div id="btnPDF"> <iframe id="ifmPrefactura" src="http://docs.google.com/gview?url=http://186.71.68.154:8090/prefactura_taller/DEBITOCONFIAMED2015.pdf&embedded=true"
+                frameborder="0"> </iframe>
+            
+        </div>
+    <!--<embed src="http://190.108.66.10:8089/biss.sherloc/CRISTIAN2.pdf" width="100%" height="100%"></enbed>   http://190.108.66.10:8089/biss.sherloc/DEBITOCONFIAMED2015.pdf-->
+    <!--<iframe src="http://IPS10:8089/biss.sherloc/CRISTIAN2.pdf">
+    <embed src="http://190.108.66.10:8089/biss.sherloc/CRISTIAN2.pdf" width="200" height="200">
+
+     <!--<div data-role="content">
+        <ul data-role="listview" data-style="inset">
+            <li>
+                <input type="text" value="Text" />
+            </li>
+        </ul>
+        <iframe src="http://docs.google.com/viewer?url=http://IPS10:8089/biss.sherloc/DEBITOCONFIAMED2015.pdf&embedded=true" width="350" height="450" style="border: none;"></iframe>
+        <a href="http://IPS10:8089/biss.sherloc/DEBITOCONFIAMED2015.pdf"></a>
+    
+    </div>-->
+     <!--<div data-role="content">  <embed src="http://IPS10:8089/biss.sherloc/DEBITOCONFIAMED2015.pdf" width="350" height="450" href="http://IPS10:8089/biss.sherloc/DEBITOCONFIAMED2015.pdf"></embed>
+    </div>-->
+    </form>
+    </div>
+    
+   <!-- <style type="text/css">
+    .modal {
+        display: none; /*Hidden by default*/
+        position: fixed; / Stay in place /
+        z-index: 1; / Sit on top /
+        padding-top: 100px; / Location of the box /
+        left: 0;
+        top: 0;
+        width: 100%; / Full width /
+        height: 100%; / Full height /
+        overflow: auto; / Enable scroll if needed /
+        background-color: rgb(0,0,0); 
+        background-color: rgba(0,0,0,0.4); 
+    }
+
+    / Modal Content /
+    .modal-content {
+        background-color: rgb(0,0,0); / Fallback color /
+        z-index: 1;
+        margin: auto;
+        padding: 0px;
+        border: 1px solid #888;
+        width: 4%;
+    }
+</style>-->

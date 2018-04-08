@@ -1,0 +1,15 @@
+<div data-role="view" data-title="Recorrido Vehiculo" data-layout="main" data-model="app.mntControlVehiculo" data-show="app.mntControlVehiculo.onShow" data-after-show="app.mntControlVehiculo.afterShow"
+    id="mntControlVehiculoScreen" class="screen" data-before-show="app.mntControlVehiculo.inicializa" >
+    <header data-role="header">
+        <div data-role="navbar" class="header-text"><span data-role="view-title"></span> <span id="recorrido" class="km-view-subtitle"></span>
+            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
+            <a data-align="right" class="fa fa-reply" href="components/FechaRecorrido/view.html" aria-hidden="true" data-role="button"></a>
+        </div>
+    </header>
+    <ul class="form-content" data-role="listview" data-style="inset">
+        <li id="objlist2" class="form-content-item">
+            <div id="mapA" class="mapView"></div>
+        </li>
+    </ul>
+    <!-- END_CUSTOM_CODE_mntVehiculos -->
+</div>

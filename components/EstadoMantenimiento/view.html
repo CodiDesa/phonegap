@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<div data-role="view" data-title="Estado de sus Mantenimientos" data-layout="main" data-model="app.estadoMante" data-show="app.estadoMante.onShow"
+    data-after-show="app.estadoMante.afterShow" id="estadoManteScreen" class="screen" data-before-show="app.estadoMante.inicializa"
+    data-use-native-scrolling="true">
+    <header data-role="header">
+        <div data-role="navbar" class="header-text"><span data-role="view-title"></span><span id="NumeroChasisEM" class="km-view-subtitle"></span>
+            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left"
+                data-icon="drawer-button"></a>
+            <a data-align="right" class="fa fa-reply" href="components/miKia/view.html" aria-hidden="true" data-role="button"></a>
+        </div>
+    </header>
+    <!--<div class="form-group1">
+        </br>
+        <div class="col-xs-12"><b><label value ="Su último ingreso a taller fue:"></label></b></div>
+    </div>-->
+    <div style="background-color:white;color:black;padding:5px;">
+        <p><b>Último ingreso taller:&nbsp;&nbsp;<input id="fec" type="text" style="width: 25%; background: white;" disabled>&nbsp;&nbsp;KM: <input id="KM" type="text" style="width: 20%; background: white;" disabled></input></b></p>
+    </div>
+    <div data-role="content">
+        <div class="container1">
+            <form class="form-horizontal1">
+                <table border>
+                    <tr>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><input type="text" value="5,000" style="width: 50%; " align="center" disabled>&nbsp;&nbsp;
+                                    <input id="cl5000" type="text" style="width: 15%;" disabled> 
+                                    <i id="cx5000v" class="fa fa-check" aria-hidden="true" style="color:green; display:none;width: 15%;"></i> 
+                                    <i id="cx5000x" class="fa fa-times" aria-hidden="true" style="color:red; display:none;width: 15%;"></i>
+                                    </input> 
+                                </div>
+                            </div>
+                        </td>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><b><input type="text" value="80,000" style="width: 50%;" align="right" disabled></b>&nbsp;&nbsp;
+                                    <input id="cl80000" type="text" style="width: 15%; " disabled> <i id="cx80000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx80000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i></input> 
+                                </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><b><input type="text" value="10,000" style="width: 50%;" align="rigth" disabled></b>&nbsp;&nbsp;
+                                    <input id="cl10000" type="text" style="width: 15%; " disabled> <i id="cx10000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;width: 15%;"></i> <i id="cx10000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;width: 15%;"></i></input> </div>
+                            </div>
+                        </td>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><input type="text" value="85,000" style="width: 50%;" align="middle" disabled>&nbsp;&nbsp;
+                                    <input id="cl85000" type="text" style="width: 15%; " disabled> <i id="cx85000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx85000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><input type="text" value="15,000" style="width: 50%; " align="center" disabled>&nbsp;&nbsp;
+                                    <input id="cl15000" type="text" style="width: 15%; " disabled> <i id="cx15000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx15000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                            </div>
+                        </td>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><b><input type="text" value="90,000" style="width: 50%;" align="right" disabled></b>&nbsp;&nbsp;
+                                    <input id="cl90000" type="text" style="width: 15%; " disabled> <i id="cx90000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx90000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><b><input type="text" value="20,000" style="width: 50%;" align="rigth" disabled></b>&nbsp;&nbsp;
+                                    <input id="cl20000" type="text" style="width: 15%; " disabled> <i id="cx20000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx20000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                            </div>
+                        </td>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><input type="text" value="95,000" style="width: 50%;" align="middle" disabled>&nbsp;&nbsp;
+                                    <input id="cl95000" type="text" style="width: 15%; " disabled> <i id="cx95000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx95000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><input type="text" value="25,000" style="width: 50%; " align="center" disabled>&nbsp;&nbsp;
+                                    <input id="cl25000" type="text" style="width: 15%; " disabled> <i id="cx25000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx25000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                            </div>
+                        </td>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><b><input type="text" value="100,000" style="width: 50%;" align="right" disabled></b>&nbsp;&nbsp;
+                                    <input id="cl100000" type="text" style="width: 15%; " disabled> <i id="cx100000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx100000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><b><input type="text" value="30,000" style="width: 50%;" align="rigth" disabled></b>&nbsp;&nbsp;
+                                    <input id="cl30000" type="text" style="width: 15%; " disabled> <i id="cx30000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx30000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                            </div>
+                        </td>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><input type="text" value="105,000" style="width: 50%;" align="middle" disabled>&nbsp;&nbsp;
+                                    <input id="cl105000" type="text" style="width: 15%; " disabled> <i id="cx105000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx105000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><input type="text" value="35,000" style="width: 50%; " align="center" disabled>&nbsp;&nbsp;
+                                    <input id="cl35000" type="text" style="width: 15%; " disabled> <i id="cx35000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx35000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                            </div>
+                        </td>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><b><input type="text" value="110,000" style="width: 50%;" align="right" disabled></b>&nbsp;&nbsp;
+                                    <input id="cl110000" type="text" style="width: 15%; " disabled> <i id="cx110000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx110000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><b><input type="text" value="40,000" style="width: 50%;" align="rigth" disabled></b>&nbsp;&nbsp;
+                                    <input id="cl40000" type="text" style="width: 15%; " disabled> <i id="cx40000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx40000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                            </div>
+                        </td>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><input type="text" value="115,000" style="width: 50%;" align="middle" disabled>&nbsp;&nbsp;
+                                    <input id="cl115000" type="text" style="width: 15%; " disabled> <i id="cx115000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx115000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><input type="text" value="45,000" style="width: 50%; " align="center" disabled>&nbsp;&nbsp;
+                                    <input id="cl45000" type="text" style="width: 15%; " disabled> <i id="cx45000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx45000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                            </div>
+                        </td>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><b><input type="text" value="120,000" style="width: 50%;" align="right" disabled></b>&nbsp;&nbsp;
+                                    <input id="cl120000" type="text" style="width: 15%; " disabled> <i id="cx120000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx120000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><b><input type="text" value="50,000" style="width: 50%;" align="rigth" disabled></b>&nbsp;&nbsp;
+                                    <input id="cl50000" type="text" style="width: 15%; " disabled> <i id="cx50000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx50000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                            </div>
+                        </td>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><input type="text" value="125,000" style="width: 50%;" align="middle" disabled>&nbsp;&nbsp;
+                                    <input id="cl125000" type="text" style="width: 15%; " disabled> <i id="cx125000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx125000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><input type="text" value="55,000" style="width: 50%; " align="center" disabled>&nbsp;&nbsp;
+                                    <input id="cl55000" type="text" style="width: 15%; " disabled> <i id="cx55000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx55000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                            </div>
+                        </td>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><b><input type="text" value="130,000" style="width: 50%;" align="right" disabled></b>&nbsp;&nbsp;
+                                    <input id="cl130000" type="text" style="width: 15%; " disabled> <i id="cx130000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx130000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><b><input type="text" value="60,000" style="width: 50%;" align="rigth" disabled></b>&nbsp;&nbsp;
+                                    <input id="cl60000" type="text" style="width: 15%; " disabled> <i id="cx60000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx60000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                            </div>
+                        </td>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><input type="text" value="135,000" style="width: 50%;" align="middle" disabled>&nbsp;&nbsp;
+                                    <input id="cl135000" type="text" style="width: 15%; " disabled> <i id="cx135000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx135000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><input type="text" value="65,000" style="width: 50%; " align="center" disabled>&nbsp;&nbsp;
+                                    <input id="cl65000" type="text" style="width: 15%; " disabled> <i id="cx65000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx65000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                            </div>
+                        </td>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><b><input type="text" value="140,000" style="width: 50%;" align="right" disabled></b>&nbsp;&nbsp;
+                                    <input id="cl140000" type="text" style="width: 15%; " disabled> <i id="cx140000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx140000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><b><input type="text" value="70,000" style="width: 50%;" align="rigth" disabled></b>&nbsp;&nbsp;
+                                    <input id="cl70000" type="text" style="width: 15%; " disabled> <i id="cx70000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx70000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                            </div>
+                        </td>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><input type="text" value="145,000" style="width: 50%;" align="middle" disabled>&nbsp;&nbsp;
+                                    <input id="cl145000" type="text" style="width: 15%; " disabled> <i id="cx145000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx145000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><input type="text" value="75,000" style="width: 50%; " align="center" disabled>&nbsp;&nbsp;
+                                    <input id="cl75000" type="text" style="width: 15%; " disabled> <i id="cx75000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx75000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                            </div>
+                        </td>
+                        <td class="clase">
+                            <div class="form-group1">
+                                <div class="col-xs-12"><b><input type="text" value="150,000" style="width: 50%;" align="right" disabled></b>&nbsp;&nbsp;
+                                    <input id="cl150000" type="text" style="width: 15%; " disabled> <i id="cx150000v" class="fa fa-check"
+                                        aria-hidden="true" style="color:green; display:none;"></i> <i id="cx150000x" class="fa fa-times"
+                                        aria-hidden="true" style="color:red; display:none;"></i> </div>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+            </form>
+            <div id="listViewEM"></div>
+            </div>
+            <!--<div class="form-group">
+                <div class="col-xs-12"> <label>Debido a que su vehículo no tiene los mantenimientos requeridos, al momento se encuentra <b>FUERA DE GARANTIA</b>                si desea que se reactive su garantía, favor tomar contacto con su taller de servicio mas cercano</label>                                    </div>
+            </div>-->
+                <div id="rojo" class="form-group1" style="background-color:white;color:black;padding:5px;display:none;">
+                    <p>Debido a que su vehículo no tiene los mantenimientos requeridos, al momento se encuentra <b>FUERA DE GARANTIA</b>
+                    si desea que se reactive su garantía, favor tomar contacto con su taller de servicio mas cercano.</p>
+                </div>
+                <div id="verde" class="form-group1" style="background-color:white;color:black;padding:5px;display:none;">
+                    <p>Su vehículo, cuenta con todos los mantenimientos requeridos, por lo que se encuentra dentro de garantia
+                       <b> AGRADECEMOS SU CONFIANZA</b></p>
+                </div>
+            
+            </div>
+            <style>
+                .clase {
+                    padding: 2px;
+                }
+                
+                table1,
+                th1,
+                td1 {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                
+                th1,
+                td1 {
+                    padding: 2px;
+                }
+                
+                .form-group1 {
+                    margin-bottom: 15px;
+                }
+                
+                .container1 {
+                    margin-right: auto;
+                    margin-left: auto;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+                
+                .form-horizontal1 .form-group1 {
+                    margin-left: -15px;
+                    margin-right: -15px;
+                }
+                
+                .red {
+                    color: red;
+                }
+                
+                .green {
+                    color: green;
+                }
+            </style>

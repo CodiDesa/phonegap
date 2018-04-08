@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<div data-role="view" data-title="Reporte Geocercas" data-layout="main" data-model="app.reporteGeocercas" data-show="app.reporteGeocercas.onShow"
+    data-after-show="app.reporteGeocercas.afterShow" id="reporteGeocercasScreen" class="screen" data-before-show="app.reporteGeocercas.inicializa">
+    <header data-role="header">
+        <div data-role="navbar" class="header-text"><span data-role="view-title"></span><span id="NoOrdenGC" class="km-view-subtitle"></span>
+            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left"
+                data-icon="drawer-button"></a>
+            <a data-align="right" class="fa fa-reply" onclick="regresaGC()" aria-hidden="true" data-role="button"></a>
+            <!--<a data-align="right" class="fa fa-sign-out" onclick="logoutMenu()" aria-hidden="true" data-role="button"></a>href="components/MenuAlertas/view.html"-->
+        </div>
+    </header>
+    <div data-role="content">
+        <div class="container">
+            <form class="form-horizontal">
+                <table style="text-align: center;">
+                    <tr>
+                        <td>
+                            <div class="form-group">&nbsp;&nbsp;&nbsp;&nbsp;Fecha Inicio
+                                <div class="col-xs-12"><input id="FechaInicioGC" style="width: 75%;" align="center" placeholder="Fecha Inicio" onkeyup="javascript:this.value='';"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">&nbsp;&nbsp;&nbsp;&nbsp;Fecha Fin
+                                <div class="col-xs-12"><input id="FechaFinGC" style="width: 75%;" align="center" placeholder="Fecha Fin" onkeyup="javascript:this.value='';"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan=2>
+                            <div class="form-group"> <button id="btnConsultarGC" class="primary" data-role="button" onclick="traeCordenadasUbicaGC()">Consulta</button>                                </div>
+                        </td>
+                    </tr>
+                </table>
+        </div>
+        </form>
+        <div id="listViewGC"></div>
+    </div>
+</div>

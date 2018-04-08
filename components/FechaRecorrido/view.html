@@ -1,0 +1,36 @@
+<div data-role="view" data-title="Fecha Recorrido" data-layout="main" data-model="app.fechaReco" data-show="app.fechaReco.onShow" data-after-show="app.fechaReco.afterShow"
+    id="fechaRecoScreen" class="screen" data-before-show="app.fechaReco.inicializa" data-use-native-scrolling="true" > 
+    <header data-role="header">
+        <div data-role="navbar" class="header-text"><span data-role="view-title"></span><span id="NoOrdenRA" class="km-view-subtitle"></span>
+            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left"
+                data-icon="drawer-button"></a>
+            <a data-align="right" class="fa fa-reply" href="components/OrdenInstalacion/view.html" aria-hidden="true"
+                data-role="button"></a>
+        </div>
+    </header>
+    <div data-role="content">
+        <div class="container">
+            <form class="form-horizontal" id="fec">
+                <table style="text-align: center;">
+                    <tr>
+                        <td>
+                            <div class="form-group">&nbsp;&nbsp;&nbsp;&nbsp;<label id="myLabel" for="male">Fecha Recorrido</label>
+                                <div class="col-xs-12"><input id="FechaRecor" style="width: 75%;" align="center" placeholder="Fecha" onkeyup="javascript:this.value='';"></div>
+                            </div>
+                        </td>
+                       <!-- <td>
+                            <div class="form-group">&nbsp;&nbsp;&nbsp;&nbsp;Fecha Fin
+                                <div class="col-xs-12"><input id="FechaFin" style="width: 75%;" align="center" placeholder="Fecha Fin" onkeyup="javascript:this.value='';"></div>
+                            </div>
+                        </td>-->
+                    </tr>
+                    <tr>
+                        <td colspan=2>
+                            <div class="form-group"> <button id="btnConsultarFecha" class="primary" data-role="button" onclick="Consultar()">Consultar</button></div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>

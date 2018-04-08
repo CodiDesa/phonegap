@@ -1,0 +1,43 @@
+<div data-role="view" data-layout="main-nonav" data-model="app.logIn" data-show="app.logIn.onShow" data-after-show="app.logIn.afterShow" id="logInScreen" class="screen" style="align:center">
+    <header data-role="header">
+        <div data-role="navbar" class="header-text"> <span data-bind="text: strings.logIn.title"></span>
+            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left"
+                data-icon="drawer-button"></a>
+                <a data-align="right" class="fa fa-reply" href="components/MenuKia/view.html" aria-hidden="true" data-role="button"></a>
+        </div>
+    </header>
+    <div data-role="content" class="general">
+        <div class="blanco">
+            <form>
+                <div class="form-group">
+                    <div class="col-xs-12"> <input type="email" class="form-control" id="emailLogin" placeholder="Email" onblur="ValidaMailLogin();"></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12"> <input type="password" class="form-control" id="passwordLogin" placeholder="Password"> </div>
+                </div>
+                <ul data-role="listview">
+                    <li> <a href="components/RecuperarContrasena/view.html">Olvide contraseña</a> </li>
+                </ul>
+                <div class="button-group button-group-vertical"> <a data-role="button" class="primary" onclick="signin()">Iniciar Sesión</a> </div>
+            </form>
+        </div>
+    </div>
+   <!-- <style>
+        .general {
+            text-align: left;
+            margin: auto;
+        }
+        .blanco {
+            display: inline-block;
+            background-color: #EEE;
+            border: 1px solid #ccc;
+            padding: 0 1rem;
+            margin: 1rem;
+            text-align: left;
+        }
+        .screen {
+            text-align: left;
+            margin: auto;
+        }
+    </style>-->
+</div>

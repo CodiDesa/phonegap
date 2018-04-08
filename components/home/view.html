@@ -1,0 +1,36 @@
+<div data-role="view" data-layout="main" data-model="app.home" data-before-show="app.home.onShow1" data-after-show="app.home.afterShow"
+    id="homeScreen1" class="screen" data-stretch="true">
+   <!-- <uses-permission android:name="android.permission.INTERNET"> </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"> </uses-permission>-->
+    <header data-role="header">
+        <div data-role="navbar" class="header-text"> <span data-bind="text: strings.home.title"></span>
+            <a data-align="right" class="fa fa-reply" href="components/MenuKia/view.html"
+                aria-hidden="true" data-role="button"></a>
+        </div>
+    </header>
+    <!-- onclick="AdmVehiculos()" -->
+    <div class="container fondoRojoLogin">
+        <div class="row" style="padding-top:54px; padding-bottom:54px;">
+            <div class="col-xs-6 text-center">
+                <a data-bind="events: { click: homeModel.ingresar }" class="icon-wrapper"> <span class="fa-stack fa-lg ">
+              <i class="mi-icon fa-stack-2x "></i>
+              <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+            </span> </a> <span class="icon-text clearfix ">Ingresar</span> </div>
+            <div class="col-xs-6 text-center">
+                <a data-bind="events: { click: homeModel.registro }" class="icon-wrapper"> <span class="fa-stack fa-lg ">
+              <i class="mi-icon fa-stack-2x "></i>
+              <i class="fa fa-address-card fa-stack-1x fa-inverse"></i>
+            </span> </a> <span class="icon-text clearfix ">Registrar</span> </div>
+            <div class="col-xs-6 text-center">
+                <a class="icon-wrapper"> <span class="fa-stack fa-lg ">
+              <i class="mi-icon fa-stack-2x "></i>
+              <i class="fa fa-user-circle-o fa-stack-1x fa-inverse"></i>
+            </span> </a> <span class="icon-text clearfix ">Actualizar Datos</span> </div>
+        </div>
+    </div>
+</div>
+<style>
+    .fondoRojoLogin {
+        background-color: #bb162b; // #ff4350;
+    }
+</style>

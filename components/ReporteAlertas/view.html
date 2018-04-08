@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<div data-role="view" data-title="Reporte Excesos Velocidad" data-layout="main" data-model="app.reporteAlertas" data-show="app.reporteAlertas.onShow"
+    data-after-show="app.reporteAlertas.afterShow" id="reporteAlertasScreen" class="screen" data-before-show="app.reporteAlertas.inicializa">
+    <header data-role="header">
+        <div data-role="navbar" class="header-text"><span data-role="view-title"></span><span id="NoOrdenEX" class="km-view-subtitle"></span>
+            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left"
+                data-icon="drawer-button"></a>
+            <a data-align="right" class="fa fa-reply" onclick="regresaE()" aria-hidden="true" data-role="button"></a>
+            <!--<a data-align="right" class="fa fa-sign-out" onclick="logoutMenu()" aria-hidden="true" data-role="button"></a>href="components/MenuAlertas/view.html"-->
+        </div>
+    </header>
+    <div data-role="content">
+        <div class="container">
+            <form class="form-horizontal">
+                <table style="text-align: center;">
+                    <tr>
+                        <td>
+                            <div class="form-group">&nbsp;&nbsp;&nbsp;&nbsp;Fecha Inicio
+                                <div class="col-xs-12"><input id="FechaInicioRA" style="width: 75%;" align="center" placeholder="Fecha Inicio" onkeyup="javascript:this.value='';"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">&nbsp;&nbsp;&nbsp;&nbsp;Fecha Fin
+                                <div class="col-xs-12"><input id="FechaFinRA" style="width: 75%;" align="center" placeholder="Fecha Fin" onkeyup="javascript:this.value='';"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan=2>
+                            <div class="form-group"> <button id="btnConsultarRA" class="primary" data-role="button" onclick="traeCordenadasUbicaRA()">Consulta</button>                                </div>
+                        </td>
+                    </tr>
+                </table>
+        </div>
+        </form>
+        <div id="listViewRA"></div>
+    </div>
+</div>

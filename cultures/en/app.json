@@ -1,0 +1,43 @@
+{
+  "_app": {
+    "navigationMore": "More",
+    "showMoreTitle": "Show More",
+    "qrCodeScan": "Scan"
+  },
+  "home": {
+    "title": "Home",
+    "homeModel": {
+      "submitButton": "Ingresar",
+      "cancelButton": "Registrarse",
+      "editableListForm": {
+        "imagenKia": {
+          "title": "i"
+        }
+      }
+    }
+  },
+  "logIn": {
+    "title": "LogIn"
+  },
+  "miKia": {
+    "title": "Mi Kia"
+  },
+  "miKia2": {
+    "title": "Orden de instalación"
+  },
+  "miKia3": {
+    "title": "Mapa"
+  },
+  "miKia4": {
+    "title": "Control vehículo"
+  },
+  "miKia5": {
+    "title": "Recuperar contraseña"
+  },
+  "miKia6": {
+    "title": "Registrarse"
+  },
+"mmtOTs": {
+    "title": "Ordenes de Trabajo"
+  }
+}

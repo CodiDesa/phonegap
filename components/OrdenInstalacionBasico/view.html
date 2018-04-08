@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<div data-role="view" data-title="Orden Instalación Básico" data-layout="main" data-model="app.ordenBasico" data-show="app.ordenBasico.onShow" data-after-show="app.ordenBasico.afterShow"
+    id="ordenBasicoScreen" class="screen" data-before-show="app.ordenBasico.inicializa" data-stretch="true">
+    <header data-role="header">
+        <div data-role="navbar" class="header-text"> <span data-bind="text: strings.ordenBasico.title"></span><span id="NoOrdenBA" class="km-view-subtitle"></span>
+            <a data-role="button"
+                href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
+            <a data-align="right" class="fa fa-reply" href="components/MenuKia/view.html" aria-hidden="true" data-role="button"></a>
+        </div>
+    </header>
+    <div>
+    <div id="btnHabilita" class="container fondoRojo" style="position: relative;">
+        <div class="row" style="padding-top:54px; padding-bottom:54px;">
+            <div class="col-xs-6 text-center">
+                <a onclick="ubicarVehiculo()" class="icon-wrapper"> <span class="fa-stack fa-lg">
+              <i class="mi-icon fa-stack-2x"></i>
+              <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+            </span> <span class="icon-text clearfix">Ubicación</span> </a>
+            </div>
+            <div class="col-xs-6 text-center">
+                <a onclick="controlVehiculo()" class="icon-wrapper"> <span class="fa-stack fa-lg ">
+              <i class="mi-icon fa-stack-2x "></i>
+              <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+            </span> </a> <span class="icon-text clearfix ">Control del Vehículo</span> </div>
+        </div>
+    </div>
+    <div class="content" style="padding: 10px 15px;text-align: center">
+        <div class="container">
+            <form class="form-horizontal" id="registro">
+                <div class="form-group">
+                    <div class="col-xs-12"> 
+                        <!--<input type="number" class="form-control" id="NoOrdenn" placeholder="No Orden de instalación">-->
+                        <button id="btn_activar" style="padding: 10px">Habilitar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+</div>

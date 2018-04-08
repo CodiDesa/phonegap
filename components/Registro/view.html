@@ -1,0 +1,49 @@
+<div data-role="view" data-title="View" data-layout="main" data-model="app.miKia6" data-show="app.miKia6.onShow" data-after-show="app.miKia6.afterShow"
+    id="miKia6Screen" class="screen">
+    <header data-role="header">
+        <div data-role="navbar" class="header-text"> <span data-bind="text: strings.miKia6.title"></span>
+            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left"
+                data-icon="drawer-button"></a>
+            <a data-align="right" class="fa fa-reply" href="components/MenuKia/view.html" aria-hidden="true" data-role="button"></a>
+        </div>
+    </header>
+    <div class="content" style=" padding: 30px 20px;" scrool>
+        <div class="container">
+            <form class="form-horizontal" id="registro">
+                <div class="form-group">
+                    <div class="col-xs-12"> <input type="text" class="form-control" id="identificacion" placeholder="Identificación" required="true"
+                            onblur="personaGet();"> </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12"> <input type="text" class="form-control" id="Nombres" placeholder="Nombres" required="true"> </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12"> <input type="text" class="form-control" id="Apellidos" placeholder="Apellidos"> </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12"> <input type="email" class="form-control" id="email" placeholder="Email" onblur="ValidaMailRegistro();">                        </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12"> <input type="text" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"
+                            class="form-control" id="Chasis" placeholder="Vehículo"> </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12"><input style="width: 100%;" id="FechaNacimiento" placeholder="Fecha de nacimiento" onkeyup="javascript:this.value='';"></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12"> <input type="number" class="form-control" id="celular" placeholder="Celular" onblur="ValidaCelular();">                        </div>
+                </div>
+                <!--<div class="form-group">
+                    <div class="col-xs-12"> <input type="number" class="form-control" id="numorden" placeholder="Número orden"> </div>
+                </div>-->
+                <div class="form-group">
+                    <div class="col-xs-12"> <input type="password" class="form-control" id="password" placeholder="Contraseña"> </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12"> <input type="password" class="form-control" id="repassword" placeholder="Confirmar contraseña" onkeyup="ValidaPassword();">                        </div>
+                </div>
+            </form>
+            <div class="form-group" style="text-align:center"> <button id="btnRegistrar" class="primary" data-role="button" onclick="registrar()">Registrarse</button> </div>
+        </div>
+    </div>
+</div>
